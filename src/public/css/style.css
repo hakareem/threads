@@ -1,44 +1,73 @@
-/* Custom styles for Threads */
+:root {
+    --primary-color: #6366f1;
+    --secondary-color: #f43f5e;
+    --dark-color: #1e293b;
+    --light-color: #f8fafc;
+    --gray-color: #94a3b8;
+}
+
 body {
-    background-color: #f8fafc;
-  }
-  
-  .navbar {
-    padding: 1rem 0;
-  }
-  
-  .card {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  
-  .card:hover {
-    transform: translateY(-2px);
+    font-family: 'Inter', sans-serif;
+    background-color: #f1f5f9;
+    color: var(--dark-color);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-link {
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.card {
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.card:hover {
+    transform: translateY(-1px);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  }
-  
-  .post-image {
-    height: 200px;
-    object-fit: cover;
-    width: 100%;
-  }
-  
-  .btn {
+}
+
+.post-image {
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.post-image:hover {
+    transform: scale(1.02);
+}
+
+.btn {
     border-radius: 8px;
     padding: 0.5rem 1rem;
     font-weight: 500;
-  }
-  
-  .form-control, .form-select {
+}
+
+.form-control, .form-select {
     border-radius: 8px;
     padding: 0.5rem 1rem;
-  }
-  
-  .alert {
+}
+
+.alert {
     border-radius: 8px;
-  }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .post-image {
-      height: 150px;
+    height: 150px;
     }
-  }  
+}  
