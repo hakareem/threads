@@ -1,0 +1,44 @@
+/* Custom styles for Threads */
+body {
+    background-color: #f8fafc;
+  }
+  
+  .navbar {
+    padding: 1rem 0;
+  }
+  
+  .card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post-image {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+  }
+  
+  .btn {
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+  }
+  
+  .form-control, .form-select {
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+  }
+  
+  .alert {
+    border-radius: 8px;
+  }
+  
+  @media (max-width: 768px) {
+    .post-image {
+      height: 150px;
+    }
+  }  
