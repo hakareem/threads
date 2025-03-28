@@ -1,0 +1,42 @@
+<%- include('partials/header') -%>
+
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card mb-4">
+        <img src="<%= post.image%>" class="card-img-top post-image" alt="Post image">
+        <div class="card-body">
+          <h2 class="card-title"><%= post.title %></h2>
+          <p class="card-text"><%= post.caption %></p>
+          
+          <div class="d-flex justify-content-between align-items-center mt-4">
+            <form action="/post/likePost/<%= post._id %>?_method=PUT" method="POST">
+              <button class="btn btn-outline-danger" type="submit">
+                <i class="fas fa-heart me-1"></i> <%= post.likes %>
+              </button>
+            </form>
+            
+            <%if(post.user == user.id){ %>
+            <form action="/post/deletePost/<%= post._id %>?_method=DELETE" method="POST">
+              <button class="btn btn-outline-secondary" type="submit">
+                <i class="fas fa-trash me-1"></i> Delete
+              </button>
+            </form>
+            <%}%>
+          </div>
+        </div>
+      </div>
+      
+      <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-4">
+        <a class="btn btn-primary me-md-2" href="/profile">
+          <i class="fas fa-user me-1"></i> Profile
+        </a>
+        <a class="btn btn-outline-primary" href="/feed">
+          <i class="fas fa-stream me-1"></i> Feed
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') -%>
