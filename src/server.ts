@@ -44,7 +44,7 @@ app.use(flash());
 // sessions setup
 app.use(
   session({
-    secret: "keyboard cat",
+    secret: process.env.SECRET as string,
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
