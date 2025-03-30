@@ -12,7 +12,7 @@ import postRoutes from "./routes/posts";
 import path from "path";
 
 import dotenv from "dotenv";
-dotenv.config({ path: path.resolve(__dirname, "../src/config/.env") });
+dotenv.config();
 
 // passport config
 import passportConfig from "./config/passport";
@@ -24,9 +24,9 @@ connectDB();
 
 // template engine
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "../src/views"));
+app.set("views", path.join(__dirname, "views"));
 
-app.use(express.static(path.join(__dirname, "../src/public")));
+app.use(express.static(path.join(__dirname, "public")));
 
 // request parsing middleware
 app.use(express.urlencoded({ extended: true }));
