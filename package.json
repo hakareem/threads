@@ -5,8 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc --build",
-    "start": "nodemon server.js",
+    "start": "node build/server.js",
+    "build": "tsc", 
+    "dev": "ts-node-dev src/server.ts",
     "start:dev": "nodemon --exec ts-node src/server.ts"
   },
   "repository": {
