@@ -9,6 +9,7 @@ import logger from "morgan";
 import connectDB from "./config/db";
 import mainRoutes from "./routes/main";
 import postRoutes from "./routes/posts";
+import commentRoutes from "./routes/comments";
 import path from "path";
 
 import dotenv from "dotenv";
@@ -60,6 +61,7 @@ app.use(passport.session());
 // routes setup
 app.use("/", mainRoutes);
 app.use("/post", postRoutes);
+app.use("/comment", commentRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on PORT ${process.env.PORT}`);
