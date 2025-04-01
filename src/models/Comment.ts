@@ -18,21 +18,21 @@ const CommentSchema: Schema<IComment> = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  createdBy: {
-    type: String,
-    ref: "User",
-    required: true,
-  },
+  // createdBy: {
+  //   type: String,
+  //   ref: "User",
+  //   required: true,
+  // },
   post: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Post",
     required: true,
   },
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
-    required: true,
-  },
+  // user: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: "User",
+  //   required: true,
+  // },
   createdAt: {
     type: Date,
     default: Date.now,

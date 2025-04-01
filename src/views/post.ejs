@@ -15,7 +15,7 @@
                 <i class="fas fa-heart me-1"></i> <%= post.likes %>
               </button>
             </form>
-            
+
             <%if(post.user == user.id){ %>
             <form action="/post/deletePost/<%= post._id %>?_method=DELETE" method="POST">
               <button class="btn btn-outline-secondary" type="submit">
@@ -24,6 +24,40 @@
             </form>
             <%}%>
           </div>
+
+            <div class="mt-4"></div>
+            <h4 class="mb-3">Add a comment</h4>
+            <form action="/comment/createComment/<%= post._id %>" method="POST" class="mb-4">
+              <div class="mb-3">
+              <label for="comment" class="form-label">Comment</label>
+              <input type="text" class="form-control" id="comment" name="comment" placeholder="Write your comment here...">
+              </div>
+              <button class="btn btn-outline-primary" type="submit">
+              <i class="fas fa-comment me-1"></i> Comment
+              </button>
+            </form>
+            </div>
+
+              <div class="comments-section mt-4"></div>
+              <h4 class="mb-3">Comments (<%= comments.length %>)</h4>
+              <% if (comments.length > 0) { %>
+              <% comments.forEach((comment) => { %>
+                <div class="card mb-2">
+                <div class="card-body py-3">
+                  <div class="d-flex align-items-center">
+                  <i class="fas fa-user-circle me-2 text-secondary"></i>
+                  <div>
+                    <p class="card-text mb-0"><%= comment.comment%></p>
+                    <small class="text-muted">Posted by Anonymous</small>
+                  </div>
+                  </div>
+                </div>
+                </div>
+              <% }) %>
+              <% } else { %>
+                <p class="text-muted">No comments yet. Be the first to comment!</p>
+              <% } %>
+              </div>
         </div>
       </div>
       

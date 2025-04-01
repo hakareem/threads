@@ -2,6 +2,8 @@ import { Request, Response } from "express";
 import cloudinary from "../middleware/cloudinary";
 import Post, { IPost } from "../models/Post";
 import User, { IUser } from "../models/User";
+import Comment, { IComment } from "../models/Comment";
+import { cp } from "fs";
 
 export const getProfile = async (req: any, res: Response): Promise<void> => {
   try {
@@ -28,10 +30,8 @@ export const getFeed = async (req: Request, res: Response): Promise<void> => {
 export const getPost = async (req: Request, res: Response): Promise<void> => {
   try {
     const post = await Post.findById(req.params.id).lean();
-    console.log(post);
-    console.log(post);
-    console.log(post);
-    res.render("post.ejs", { post: post, user: req.user });
+    const comments = await Comment.find({post: req.params.id})
+    res.render("post.ejs", { post: post, user: req.user, comments: comments});
   } catch (err) {
     console.error(err);
   }
